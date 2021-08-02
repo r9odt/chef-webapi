@@ -1,0 +1,11 @@
+known_hosts
+id_rsa
+*.pem
+content/testdata
+content/webjs/build
+content/webjs/node_modules
+.key*
+coverage.*
+bin
+vendor
+test*

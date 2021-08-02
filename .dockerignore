@@ -1,0 +1,8 @@
+Dockerfile
+.dockerignore
+content/webjs/node_modules
+content/testdata
+
+vendor
+bin/web
+**/*_test.go
