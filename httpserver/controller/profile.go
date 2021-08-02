@@ -62,6 +62,9 @@ func ImplementToProfileUserInfo(profile *ProfileUserRequest,
 					"ImplementToProfileUserInfo [encryption.GetPasswordHASH]: %s",
 					err.Error())
 			}
+			if user.NeedPasswordChange {
+				user.NeedPasswordChange = false
+			}
 		} else {
 			web.App.Logger.Errorf(
 				"ImplementToProfileUserInfo [encryption.RSADecrypt]: %s", err.Error())
