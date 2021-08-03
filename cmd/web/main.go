@@ -93,7 +93,7 @@ func parseFlags() {
 		`Database user.	(env: DATABASE_USER)`)
 	flag.StringVar(&databasePassword, "database-password",
 		`chef`,
-		`Database password. (env: DATABASE_Password)`)
+		`Database password. (env: DATABASE_PASSWORD)`)
 	flag.StringVar(&databaseHost, "database-host",
 		`127.0.0.1`,
 		`Database host.	(env: DATABASE_HOST)`)
