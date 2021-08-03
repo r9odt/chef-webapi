@@ -49,7 +49,7 @@ export const ProfileEdit = (props) => {
                         fullWidth />
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
-                      <TextInput source="avatar" validate={required()} fullWidth />
+                      <TextInput source="avatar" fullWidth />
                     </Grid>
                     <Grid item xs={12} sm={12} md={6}>
                       <PasswordInput source='password' fullWidth />
