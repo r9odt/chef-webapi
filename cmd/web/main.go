@@ -104,8 +104,7 @@ func parseFlags() {
 		`Database provider.
 		 (env: DATABASE_PROVIDER)`)
 	flag.StringVar(&databaseName, "database-name", "ChefWebApp",
-		`Database name.
-							(env: DATABASE_NAME)`)
+		`Database name. (env: DATABASE_NAME)`)
 	flag.StringVar(&sessionProvider, "sessions-provider", "database",
 		`Sessions provider [database].
 		 (env: SESSION_PROVIDER)`)
