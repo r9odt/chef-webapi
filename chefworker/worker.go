@@ -22,22 +22,22 @@ import (
 
 // Worker describes a worker object.
 type Worker struct {
-	Threads                 int
-	DB                      *database.DBConnector
-	Logger                  logging.Logger
-	Dir                     string
-	SSHClient               *ssh.ClientConfig
-	sshMux                  sync.Mutex
-	StopRequest             chan struct{}
-	waitGroup               sync.WaitGroup
-	mux                     sync.Mutex
-	pause                   time.Duration
-	fileWatcherPause        time.Duration
-	fileWatcherExpireDays   int64
-	sshUser                 string
-	sshKeyPath              string
-	sshKnownHostsFile       string
-	disableHostnameCheck bool
+	Threads               int
+	DB                    *database.DBConnector
+	Logger                logging.Logger
+	Dir                   string
+	SSHClient             *ssh.ClientConfig
+	sshMux                sync.Mutex
+	StopRequest           chan struct{}
+	waitGroup             sync.WaitGroup
+	mux                   sync.Mutex
+	pause                 time.Duration
+	fileWatcherPause      time.Duration
+	fileWatcherExpireDays int64
+	sshUser               string
+	sshKeyPath            string
+	sshKnownHostsFile     string
+	disableHostnameCheck  bool
 }
 
 // CreateSSHConfig configure ssh config for worker.
@@ -85,22 +85,22 @@ func NewChefWorker(l logging.Logger, db *database.DBConnector, directory, sshUse
 		expireWorkerLogDays = 2
 	}
 	worker := &Worker{
-		Threads:                 runtime.NumCPU(),
-		DB:                      db,
-		Logger:                  l,
-		SSHClient:               nil,
-		Dir:                     directory,
-		StopRequest:             make(chan struct{}),
-		waitGroup:               sync.WaitGroup{},
-		mux:                     sync.Mutex{},
-		sshMux:                  sync.Mutex{},
-		pause:                   time.Second * 2,
-		fileWatcherPause:        time.Hour * 24,
-		sshUser:                 sshUser,
-		sshKeyPath:              sshKeyPath,
-		sshKnownHostsFile:       sshKnownHostsFile,
-		fileWatcherExpireDays:   expireWorkerLogDays,
-		disableHostnameCheck: disableHostnameCheck,
+		Threads:               runtime.NumCPU(),
+		DB:                    db,
+		Logger:                l,
+		SSHClient:             nil,
+		Dir:                   directory,
+		StopRequest:           make(chan struct{}),
+		waitGroup:             sync.WaitGroup{},
+		mux:                   sync.Mutex{},
+		sshMux:                sync.Mutex{},
+		pause:                 time.Second * 2,
+		fileWatcherPause:      time.Hour * 24,
+		sshUser:               sshUser,
+		sshKeyPath:            sshKeyPath,
+		sshKnownHostsFile:     sshKnownHostsFile,
+		fileWatcherExpireDays: expireWorkerLogDays,
+		disableHostnameCheck:  disableHostnameCheck,
 	}
 	worker.CreateSSHConfig()
 	// Return a worker instance.
@@ -415,7 +415,7 @@ func (w *Worker) taskProcessing(workerID int, resource string,
 
 		// Checking that went on the node.
 		hostname := strings.TrimRight(b.String(), "\n")
-		if w.disableHostnameCheck == false && hostname != v["fqdn"] && hostname != v["name"] {
+		if !w.disableHostnameCheck && hostname != v["fqdn"] && hostname != v["name"] {
 			err = fmt.Errorf(
 				"(%s) Hostname (%s) does not equal to name (%s) or fqdn (%s) node",
 				host, hostname, v["name"], v["fqdn"])
