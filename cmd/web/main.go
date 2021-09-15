@@ -26,30 +26,31 @@ var (
 )
 
 var (
-	chefClientName      string
-	chefClientKey       string
-	chefURL             string
-	sshUser             string
-	sshKeyPath          string
-	sshKnownHostsFile   string
-	address             string
-	port                string
-	env                 string
-	sessionProvider     string
-	databaseProvider    string
-	sessionExpire       int64
-	workerDir           string
-	enableProfiler      bool
-	profilerAddress     string
-	profilerPort        string
-	expireWorkerLogDays int64
-	databaseName        string
-	databaseUser        string
-	databasePassword    string
-	databaseHost        string
-	databasePort        string
-	appKeyPath          string
-	printVersion        bool
+	chefClientName       string
+	chefClientKey        string
+	chefURL              string
+	sshUser              string
+	sshKeyPath           string
+	sshKnownHostsFile    string
+	address              string
+	port                 string
+	env                  string
+	sessionProvider      string
+	databaseProvider     string
+	sessionExpire        int64
+	workerDir            string
+	enableProfiler       bool
+	profilerAddress      string
+	profilerPort         string
+	expireWorkerLogDays  int64
+	databaseName         string
+	databaseUser         string
+	databasePassword     string
+	databaseHost         string
+	databasePort         string
+	appKeyPath           string
+	disableHostnameCheck bool
+	printVersion         bool
 )
 
 // Usage is the Flag Processing Function "-h".
@@ -118,6 +119,8 @@ func parseFlags() {
 		"PPROF listen Address. (env: PPROF_ADDR)")
 	flag.StringVar(&profilerPort, "pprof-port", "8080",
 		"PPROF listen Port. (env: PPROF_PORT)")
+	flag.BoolVar(&disableHostnameCheck, "worker-disable-hostname-check", false,
+		"Disable hostname check for worker. (env: WORKER_DISABLE_HOSTNAME_CHECK)")
 	flag.Parse()
 	if printVersion {
 		fmt.Println(os.Args[0])
@@ -210,6 +213,12 @@ func parseEnvs() {
 	if arg = os.Getenv("ENV"); arg != "" {
 		env = arg
 	}
+	if arg = os.Getenv("WORKER_DISABLE_HOSTNAME_CHECK"); arg != "" {
+		bval, err := strconv.ParseBool(arg)
+		if err == nil {
+			disableHostnameCheck = bval
+		}
+	}
 }
 
 // main is main ^).
@@ -249,7 +258,8 @@ func main() {
 	web.App.ConfigureApp(workerDir, appKeyPath, sshKeyPath, sessionExpire)
 
 	chefworker := chefworker.NewChefWorker(logger, web.App.DB, workerDir,
-		sshUser, sshKeyPath, sshKnownHostsFile, expireWorkerLogDays)
+		sshUser, sshKeyPath, sshKnownHostsFile, expireWorkerLogDays,
+		disableHostnameCheck)
 	chefworker.Start()
 	defer chefworker.Stop()
 	go reloader(chefworker, stop, reloadChannel)
