@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/JIexa24/chef-webapi/httpserver/handler"
-	"github.com/JIexa24/chef-webapi/logging"
+	"github.com/r9odt/chef-webapi/httpserver/handler"
+	"github.com/r9odt/chef-webapi/logging"
 )
 
 // HTTPServer describes the server instance.

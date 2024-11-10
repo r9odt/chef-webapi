@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"net/http"
 
-	web "github.com/JIexa24/chef-webapi"
+	web "github.com/r9odt/chef-webapi"
 
-	"github.com/JIexa24/chef-webapi/httpserver/controller"
-	"github.com/JIexa24/chef-webapi/httpserver/errors"
+	"github.com/r9odt/chef-webapi/httpserver/controller"
+	"github.com/r9odt/chef-webapi/httpserver/errors"
 
 	"github.com/go-chi/render"
 )

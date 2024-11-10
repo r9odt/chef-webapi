@@ -1,6 +1,6 @@
 package database
 
-import "github.com/JIexa24/chef-webapi/database/interfaces"
+import "github.com/r9odt/chef-webapi/database/interfaces"
 
 // CreateAppModule creates module with given parameters.
 func (db *DBConnector) CreateAppModule(name, comment string,

@@ -1,12 +1,12 @@
 FROM golang:1.16.6-alpine as binary_build
 
 ENV GO_SRC=/usr/local/go/src
-WORKDIR ${GO_SRC}/github.com/JIexa24/chef-webapi
+WORKDIR ${GO_SRC}/github.com/r9odt/chef-webapi
 COPY . .
 RUN apk add --no-cache git make
 RUN go get -d ./... && go mod vendor
 
-RUN make build && ${GO_SRC}/github.com/JIexa24/chef-webapi/bin/web -version
+RUN make build && ${GO_SRC}/github.com/r9odt/chef-webapi/bin/web -version
 
 #-------------------------------------------------------------------------------
 FROM node:15.14.0-alpine as web_build
@@ -49,8 +49,8 @@ RUN set -eux; \
     gosu nobody true
 
 WORKDIR /app
-COPY --from=binary_build --chown=4253:4253 ${GO_SRC}/github.com/JIexa24/chef-webapi/bin /app/
-COPY --from=binary_build --chown=4253:4253 ${GO_SRC}/github.com/JIexa24/chef-webapi/keys.key /app/
+COPY --from=binary_build --chown=4253:4253 ${GO_SRC}/github.com/r9odt/chef-webapi/bin /app/
+COPY --from=binary_build --chown=4253:4253 ${GO_SRC}/github.com/r9odt/chef-webapi/keys.key /app/
 COPY --from=web_build --chown=4253:4253 /app/build /app/content/webjs/build
 
 EXPOSE 3000 8082

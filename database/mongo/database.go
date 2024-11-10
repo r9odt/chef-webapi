@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/JIexa24/chef-webapi/logging"
+	"github.com/r9odt/chef-webapi/logging"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

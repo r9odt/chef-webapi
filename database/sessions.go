@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/JIexa24/chef-webapi/database/interfaces"
+	"github.com/r9odt/chef-webapi/database/interfaces"
 )
 
 // CreateSession creates session with given parameters.

@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/JIexa24/chef-webapi/logging"
+	"github.com/r9odt/chef-webapi/logging"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

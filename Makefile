@@ -35,4 +35,4 @@ build:
 	-ldflags "-X main.Version=${VERSION_RELEASE} \
 	-X main.GoVersion=${GO_VERSION} \
 	-X main.GitCommit=${GIT_HASH}" \
-	-o bin/web github.com/JIexa24/chef-webapi/cmd/web; 	
+	-o bin/web github.com/r9odt/chef-webapi/cmd/web; 	

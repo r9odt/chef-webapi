@@ -3,10 +3,10 @@ package controller
 import (
 	"fmt"
 
-	web "github.com/JIexa24/chef-webapi"
+	web "github.com/r9odt/chef-webapi"
 
-	mergeSort "github.com/JIexa24/go-mergeSort"
 	"github.com/go-chef/chef"
+	mergeSort "github.com/r9odt/go-mergeSort"
 )
 
 // GetResourceBySearch return list what contains list of Resource on the server

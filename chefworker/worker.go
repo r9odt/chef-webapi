@@ -13,11 +13,11 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
-	web "github.com/JIexa24/chef-webapi"
-	"github.com/JIexa24/chef-webapi/database"
-	"github.com/JIexa24/chef-webapi/database/interfaces"
-	"github.com/JIexa24/chef-webapi/httpserver/controller"
-	"github.com/JIexa24/chef-webapi/logging"
+	web "github.com/r9odt/chef-webapi"
+	"github.com/r9odt/chef-webapi/database"
+	"github.com/r9odt/chef-webapi/database/interfaces"
+	"github.com/r9odt/chef-webapi/httpserver/controller"
+	"github.com/r9odt/chef-webapi/logging"
 )
 
 // Worker describes a worker object.

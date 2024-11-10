@@ -8,13 +8,13 @@ import (
 	"strings"
 	"time"
 
-	web "github.com/JIexa24/chef-webapi"
+	web "github.com/r9odt/chef-webapi"
 
-	"github.com/JIexa24/chef-webapi/database/interfaces"
-	"github.com/JIexa24/chef-webapi/encryption"
-	"github.com/JIexa24/chef-webapi/httpserver/middleware"
+	"github.com/r9odt/chef-webapi/database/interfaces"
+	"github.com/r9odt/chef-webapi/encryption"
+	"github.com/r9odt/chef-webapi/httpserver/middleware"
 
-	mergeSort "github.com/JIexa24/go-mergeSort"
+	mergeSort "github.com/r9odt/go-mergeSort"
 )
 
 type userRequest struct {

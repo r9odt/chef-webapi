@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"syscall"
 
-	web "github.com/JIexa24/chef-webapi"
-	"github.com/JIexa24/chef-webapi/chefworker"
-	"github.com/JIexa24/chef-webapi/httpserver"
-	"github.com/JIexa24/chef-webapi/logging"
+	web "github.com/r9odt/chef-webapi"
+	"github.com/r9odt/chef-webapi/chefworker"
+	"github.com/r9odt/chef-webapi/httpserver"
+	"github.com/r9odt/chef-webapi/logging"
 )
 
 var (

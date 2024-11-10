@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/JIexa24/chef-webapi/httpserver/errors"
-	"github.com/JIexa24/chef-webapi/httpserver/middleware"
+	"github.com/r9odt/chef-webapi/httpserver/errors"
+	"github.com/r9odt/chef-webapi/httpserver/middleware"
 
 	"github.com/go-chi/chi/v5"
 	middle "github.com/go-chi/chi/v5/middleware"

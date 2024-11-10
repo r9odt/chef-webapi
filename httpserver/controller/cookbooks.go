@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	web "github.com/JIexa24/chef-webapi"
+	web "github.com/r9odt/chef-webapi"
 
-	mergeSort "github.com/JIexa24/go-mergeSort"
 	"github.com/go-chef/chef"
+	mergeSort "github.com/r9odt/go-mergeSort"
 )
 
 // Cookbook is a structure describing cookbook.

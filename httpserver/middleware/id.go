@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/JIexa24/chef-webapi/httpserver/errors"
+	"github.com/r9odt/chef-webapi/httpserver/errors"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/render"

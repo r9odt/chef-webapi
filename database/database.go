@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/JIexa24/chef-webapi/database/interfaces"
-	"github.com/JIexa24/chef-webapi/database/mongo"
-	"github.com/JIexa24/chef-webapi/encryption"
-	"github.com/JIexa24/chef-webapi/logging"
+	"github.com/r9odt/chef-webapi/database/interfaces"
+	"github.com/r9odt/chef-webapi/database/mongo"
+	"github.com/r9odt/chef-webapi/encryption"
+	"github.com/r9odt/chef-webapi/logging"
 )
 
 // Params describes database parameters.

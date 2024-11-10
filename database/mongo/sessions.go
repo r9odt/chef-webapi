@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/JIexa24/chef-webapi/database/interfaces"
+	"github.com/r9odt/chef-webapi/database/interfaces"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

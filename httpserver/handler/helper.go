@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/JIexa24/chef-webapi/httpserver/controller"
+	"github.com/r9odt/chef-webapi/httpserver/controller"
 )
 
 func emptyJSON() string {

@@ -4,8 +4,8 @@ import (
 	"crypto/rsa"
 	"sync"
 
-	"github.com/JIexa24/chef-webapi/database"
-	"github.com/JIexa24/chef-webapi/logging"
+	"github.com/r9odt/chef-webapi/database"
+	"github.com/r9odt/chef-webapi/logging"
 
 	"github.com/go-chef/chef"
 )
